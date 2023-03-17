@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Log In to Kredible{% endblock %}
+{% block body %}
+
+<h1>Kredible Login</h1>
+
+<form method="POST" action="/login">
+    <div>{{ form.email.label }}: {{ form.email }}</div>
+    <div></div>{{ form.password.label }}:<br> {{ form.password }}</div>
+    {{ form.csrf_token }}
+    <button id="button-font-white" class ="btn btn-primary" type="submit">Sign In</button>
+</form>
+
+{% endblock %}

@@ -1,7 +1,8 @@
 """Kredible server."""
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from jinja2 import StrictUndefined
+from forms import LoginForm
 
 app = Flask(__name__)
 app.secret_key = "gwaggies"
@@ -12,6 +13,13 @@ def homepage():
     """View homepage."""
     return render_template("home.html")
 
+@app.route('/login')
+def login():
+    """Login page."""
+    form = LoginForm(request.form)
+
+
+    return render_template("login.html", form = form)
 
 if __name__ == "__main__":
     # connect_to_db(app)
