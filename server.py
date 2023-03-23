@@ -2,8 +2,9 @@
 
 from flask import Flask, render_template, request
 from jinja2 import StrictUndefined
-from model import connect_to_db
+from model import connect_to_db, db
 from forms import LoginForm
+
 
 app = Flask(__name__)
 app.secret_key = "gwaggies"
