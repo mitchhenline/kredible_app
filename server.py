@@ -1,9 +1,10 @@
 """Kredible server."""
 
-from flask import Flask, render_template, request, session, redirect
+from flask import Flask, render_template, request, session, redirect, flash
 from jinja2 import StrictUndefined
 from model import connect_to_db, db
 from forms import LoginForm
+import crud
 
 
 app = Flask(__name__)
@@ -13,7 +14,7 @@ app.jinja_env.undefined = StrictUndefined
 @app.route('/')
 def homepage():
     """View homepage."""
-    if 'user_id' not in session:
+    if 'email' not in session:
         return redirect('/login')
 
 
@@ -28,7 +29,15 @@ def login():
         email = form.email.data
         password = form.password.data
 
-        user = #create crud.py next
+
+        user = crud.get_user_by_email(email)
+        if not user or user.password != password:
+            flash("Invalid email or password")
+            return redirect("/login")
+        
+        session['email'] = user.id
+        return redirect("/")
+    
     return render_template("login.html", form = form)
 
 if __name__ == "__main__":

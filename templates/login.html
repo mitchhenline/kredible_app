@@ -6,7 +6,7 @@
 
 <form method="POST" action="/login">
     <div>{{ form.email.label }}: {{ form.email }}</div>
-    <div></div>{{ form.password.label }}:<br> {{ form.password }}</div>
+    <div>{{ form.password.label }}: {{ form.password }}</div>
     {{ form.csrf_token }}
     <button id="button-font-white" class ="btn btn-primary" type="submit">Sign In</button>
 </form>
