@@ -33,7 +33,7 @@ class Advocate(db.Model):
     company = db.Column(db.String(255))
     industry = db.Column(db.String(255))
     company_size = db.Column(db.String(255))
-    use_case = db.Column(db.String(255))
+    # use_case = db.Column(db.String(255)) see what tanner means by this
     product = db.Column(db.String(255))
 
     def __repr__(self):
