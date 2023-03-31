@@ -1,6 +1,6 @@
 import os
 from flask import Flask
-from model import db, connect_to_db, User, Advocate
+from model import db, connect_to_db, User, Advocate, UserAdv
 
 app = Flask(__name__)
 
@@ -26,8 +26,6 @@ db.session.add_all([
     user1,
     user2
 ])
-
-db.session.commit()
 
 # Advocates
 
@@ -62,5 +60,67 @@ adv28 = Advocate(email="testadv28@test.com", first_name="Daniel", last_name="Lee
 
 
 db.session.add_all([adv1, adv2, adv3, adv4, adv5, adv6, adv7, adv8, adv9, adv10, adv11, adv12, adv13, adv14, adv15, adv16, adv17, adv18, adv19, adv20, adv21, adv22, adv23, adv24, adv25, adv26, adv27, adv28])
+
+
+#UserAdv
+
+# UserAdv
+useradv1 = UserAdv(id=1, adv_id=1)
+useradv2 = UserAdv(id=1, adv_id=2)
+useradv3 = UserAdv(id=1, adv_id=3)
+useradv4 = UserAdv(id=1, adv_id=4)
+useradv5 = UserAdv(id=1, adv_id=5)
+useradv6 = UserAdv(id=1, adv_id=6)
+useradv7 = UserAdv(id=1, adv_id=7)
+useradv8 = UserAdv(id=1, adv_id=8)
+useradv9 = UserAdv(id=1, adv_id=9)
+useradv10 = UserAdv(id=1, adv_id=10)
+useradv11 = UserAdv(id=1, adv_id=11)
+useradv12 = UserAdv(id=1, adv_id=12)
+useradv13 = UserAdv(id=1, adv_id=13)
+useradv14 = UserAdv(id=1, adv_id=14)
+useradv15 = UserAdv(id=1, adv_id=15)
+useradv16 = UserAdv(id=1, adv_id=16)
+useradv17 = UserAdv(id=1, adv_id=17)
+useradv18 = UserAdv(id=1, adv_id=18)
+useradv19 = UserAdv(id=1, adv_id=19)
+useradv20 = UserAdv(id=1, adv_id=20)
+useradv21 = UserAdv(id=1, adv_id=21)
+useradv22 = UserAdv(id=1, adv_id=22)
+useradv23 = UserAdv(id=1, adv_id=23)
+useradv24 = UserAdv(id=1, adv_id=24)
+useradv25 = UserAdv(id=1, adv_id=25)
+
+useradv26 = UserAdv(id=2, adv_id=4)
+useradv27 = UserAdv(id=2, adv_id=5)
+useradv28 = UserAdv(id=2, adv_id=26)
+useradv29 = UserAdv(id=2, adv_id=27)
+useradv30 = UserAdv(id=2, adv_id=28)
+useradv31 = UserAdv(id=2, adv_id=6)
+useradv32 = UserAdv(id=2, adv_id=7)
+useradv33 = UserAdv(id=2, adv_id=8)
+useradv34 = UserAdv(id=2, adv_id=9)
+useradv35 = UserAdv(id=2, adv_id=10)
+useradv36 = UserAdv(id=2, adv_id=11)
+useradv37 = UserAdv(id=2, adv_id=12)
+useradv38 = UserAdv(id=2, adv_id=13)
+useradv39 = UserAdv(id=2, adv_id=14)
+useradv40 = UserAdv(id=2, adv_id=15)
+useradv41 = UserAdv(id=2, adv_id=16)
+useradv42 = UserAdv(id=2, adv_id=17)
+useradv43 = UserAdv(id=2, adv_id=18)
+useradv44 = UserAdv(id=2, adv_id=19)
+useradv45 = UserAdv(id=2, adv_id=20)
+useradv46 = UserAdv(id=2, adv_id=21)
+useradv47 = UserAdv(id=2, adv_id=22)
+useradv48 = UserAdv(id=2, adv_id=23)
+useradv49 = UserAdv(id=2, adv_id=24)
+useradv50 = UserAdv(id=2, adv_id=25)
+
+useradvs = [useradv1, useradv2, useradv3, useradv4, useradv5, useradv6, useradv7, useradv8, useradv9, useradv10, useradv11, useradv12, useradv13, useradv14, useradv15, useradv16, useradv17, useradv18, useradv19, useradv20, useradv21, useradv22, useradv23, useradv24, useradv25, useradv26, useradv27, useradv28]
+
+db.session.add_all(useradvs)
+
+
 db.session.commit()
 
