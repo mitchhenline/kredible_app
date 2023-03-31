@@ -20,6 +20,24 @@ class User(db.Model):
 
     def __repr__(self):
         return f'User: id={self.id} Name={self.last_name, self.first_name} Company={self.company}'
+    
+class Advocate(db.Model):
+    """An User's Advocate."""
+
+    __tablename__ ="advocates"
+
+    adv_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    email = db.Column(db.String(255), unique=True)
+    first_name = db.Column(db.String(255))
+    last_name = db.Column(db.String(255))
+    company = db.Column(db.String(255))
+    industry = db.Column(db.String(255))
+    company_size = db.Column(db.String(255))
+    use_case = db.Column(db.String(255))
+    product = db.Column(db.String(255))
+
+    def __repr__(self):
+        return f'Advocate: Advocate_ID={self.id} Name={self.last_name, self.first_name} Company={self.company}'
 
 
 
