@@ -16,6 +16,12 @@ def homepage():
     """View homepage."""
     if 'email' not in session:
         return redirect('/login')
+    
+    relationships = crud.get_relationships_by_email(session['email'])
+    advocate_list = []
+
+    for relationship in relationships:
+        advocate_list.append(relationship.advocate)
 
 
     return render_template("home.html")
@@ -39,6 +45,7 @@ def login():
         return redirect("/")
     
     return render_template("login.html", form = form)
+
 
 if __name__ == "__main__":
     connect_to_db(app)
