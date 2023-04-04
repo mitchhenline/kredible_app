@@ -2,8 +2,12 @@
 {% block title %}Kredible{% endblock %}
 {% block body %}
 
-<h1>TESTING</h1>
+<h1>Welcome to Kredible</h1>
 
-
+<div>
+    {% for advocate in advocate_list %}
+        <h3>{{ advocate.first_name }} {{ advocate.last_name }}, {{ advocate.company }}</h3>
+    {% endfor %}
+</div>
 
 {% endblock %}

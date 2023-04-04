@@ -24,7 +24,7 @@ def homepage():
         advocate_list.append(relationship.advocate)
 
 
-    return render_template("home.html")
+    return render_template("home.html", advocate_list = advocate_list)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
