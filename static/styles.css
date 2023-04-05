@@ -1,0 +1,20 @@
+/* VIEW ADVOCATES PAGE */
+
+#adv-list-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#adv-box {
+    border: solid;
+    border-color: black;
+    border-radius: 1px;
+    margin: 5px;
+    flex: 0 0 calc(20% - 10px); /* 20% for 5 items, minus 10px for margins */
+}
+
+#adv-display-name {
+    margin-left: 5%;
+    margin-right: 5%;
+}

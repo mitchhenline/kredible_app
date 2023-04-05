@@ -4,9 +4,14 @@
 
 <h1>Welcome to Kredible</h1>
 
-<div>
+<div id = "adv-list-div">
     {% for advocate in advocate_list %}
-        <h3>{{ advocate.first_name }} {{ advocate.last_name }}, {{ advocate.company }}</h3>
+    <div id="adv-box">
+    <h2 id = "adv-display-name">{{ advocate.first_name }} {{ advocate.last_name }} of {{ advocate.company }}</h2>
+    <p>Email: {{ advocate.email }}</p>
+    <p>Industry: {{ advocate.industry }}</p>
+    <p>Company Size: {{ advocate.company_size }}</p>
+    </div>
     {% endfor %}
 </div>
 
