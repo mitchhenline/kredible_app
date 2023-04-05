@@ -1,4 +1,7 @@
+
+/* /////////////////// */
 /* VIEW ADVOCATES PAGE */
+/* /////////////////// */
 
 #adv-list-div {
     display: flex;
@@ -11,7 +14,13 @@
     border-color: black;
     border-radius: 1px;
     margin: 5px;
-    flex: 0 0 calc(20% - 10px); /* 20% for 5 items, minus 10px for margins */
+    background-color:rgb(225, 225, 225);
+    flex: 0 0 calc(18% - 10px); /* 20% for 5 items, minus 10px for margins */
+    padding: 5px;
+}
+
+#adv-box:hover {
+   background-color: rgb(200, 200, 200);;
 }
 
 #adv-display-name {
