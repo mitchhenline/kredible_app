@@ -1,3 +1,16 @@
+/* /////////////////// */
+/*       HEADER        */
+/* /////////////////// */
+
+#header {
+    border-bottom: solid;
+    border-color: black;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-color: azure;
+}
+
 
 /* /////////////////// */
 /* VIEW ADVOCATES PAGE */
@@ -7,6 +20,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 100px;
 }
 
 #adv-box {
