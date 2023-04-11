@@ -117,7 +117,8 @@ useradv48 = UserAdv(id=2, adv_id=23)
 useradv49 = UserAdv(id=2, adv_id=24)
 useradv50 = UserAdv(id=2, adv_id=25)
 
-useradvs = [useradv1, useradv2, useradv3, useradv4, useradv5, useradv6, useradv7, useradv8, useradv9, useradv10, useradv11, useradv12, useradv13, useradv14, useradv15, useradv16, useradv17, useradv18, useradv19, useradv20, useradv21, useradv22, useradv23, useradv24, useradv25, useradv26, useradv27, useradv28]
+useradvs = [useradv1, useradv2, useradv3, useradv4, useradv5, useradv6, useradv7, useradv8, useradv9, useradv10,            useradv11, useradv12, useradv13, useradv14, useradv15, useradv16, useradv17, useradv18, useradv19, useradv20,            useradv21, useradv22, useradv23, useradv24, useradv25, useradv26, useradv27, useradv28, useradv29, useradv30,            useradv31, useradv32, useradv33, useradv34, useradv35, useradv36, useradv37, useradv38, useradv39, useradv40,            useradv41, useradv42, useradv43, useradv44, useradv45, useradv46, useradv47, useradv48, useradv49, useradv50]
+
 
 db.session.add_all(useradvs)
 

@@ -1,8 +1,8 @@
 /* /////////////////// */
-/*       HEADER        */
+/*       NAV BAR       */
 /* /////////////////// */
 
-#header {
+#navigation {
     border-bottom: solid;
     border-color: black;
     position: fixed;

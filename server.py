@@ -46,6 +46,11 @@ def login():
     
     return render_template("login.html", form = form)
 
+@app.route('/logout',)
+def logout():
+    del session['email']
+    return redirect('/')
+
 
 if __name__ == "__main__":
     connect_to_db(app)
