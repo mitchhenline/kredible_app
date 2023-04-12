@@ -11,7 +11,7 @@ app = Flask(__name__)
 app.secret_key = "gwaggies"
 app.jinja_env.undefined = StrictUndefined
 
-@app.route('/')
+@app.route('/')   #change to advocates
 def homepage():
     """View homepage."""
     if 'email' not in session:
@@ -25,6 +25,7 @@ def homepage():
 
 
     return render_template("home.html", advocate_list = advocate_list)
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
