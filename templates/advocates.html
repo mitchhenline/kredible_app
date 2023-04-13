@@ -26,10 +26,12 @@
     <div id = "adv-list-div">
         {% for advocate in advocate_list %}
         <div id="adv-box" class="adv-row">
-        <p>{{ advocate.first_name }} {{ advocate.last_name }} of {{ advocate.company }}</p>
-        <p>Email: {{ advocate.email }}</p>
-        <p>Industry: {{ advocate.industry }}</p>
-        <p>Company Size: {{ advocate.company_size }}</p>
+            
+            <strong><p>{{ advocate.first_name }} {{ advocate.last_name }} of {{ advocate.company }}</p></strong>&nbsp;
+            <p>Email: {{ advocate.email }}</p>&nbsp;
+            <p>Industry: {{ advocate.industry }}</p>&nbsp;
+            <p>Company Size: {{ advocate.company_size }}</p>
+    
         </div>
         {% endfor %}
     </div>
