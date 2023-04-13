@@ -11,9 +11,17 @@ app = Flask(__name__)
 app.secret_key = "gwaggies"
 app.jinja_env.undefined = StrictUndefined
 
-@app.route('/')   #change to advocates
+@app.route('/')
 def homepage():
     """View homepage."""
+    if 'email' not in session:
+        return redirect('/login')
+    else:
+        return redirect('/advocates')
+    
+@app.route('/advocates')
+def advocates_page():
+
     if 'email' not in session:
         return redirect('/login')
     
@@ -24,8 +32,42 @@ def homepage():
         advocate_list.append(relationship.advocate)
 
 
-    return render_template("home.html", advocate_list = advocate_list)
+    return render_template("advocates.html", advocate_list = advocate_list)
 
+@app.route('/calendar')
+def calendar_page():
+
+    if 'email' not in session:
+        return redirect('/login')
+
+
+    return render_template("calendar.html")
+
+@app.route('/dashboard')
+def dashboard():
+
+    if 'email' not in session:
+        return redirect('/login')
+
+
+    return render_template("dashboard.html")
+
+@app.route('/notifications')
+def notifications():
+
+    if 'email' not in session:
+        return redirect('/login')
+
+
+    return render_template("notifications.html")
+
+@app.route('/settings')
+def settings():
+
+    if 'email' not in session:
+        return redirect('/login')
+
+    return render_template("settings.html")
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
