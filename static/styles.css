@@ -1,5 +1,5 @@
 /* /////////////////// */
-/*       NAV BAR       */
+/*       NAV BAR & HEADERS      */
 /* /////////////////// */
 
 #navigation {
@@ -10,6 +10,18 @@
     top: 0px;
     height: 100%;
     background-color: rgb(158, 158, 158);
+    width: 15%;
+}
+
+.page-header {
+    margin-left: 15%;
+    position:fixed;
+    top: 0%;
+    width: 100%;
+    background-color: white;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: black;
 }
 
 
@@ -18,8 +30,10 @@
 /* /////////////////// */
 
 #adv-list-div {
-    margin-left: 350px;
-    display:inline;
+    margin-left: 15%;
+    margin-top: 8%;
+    
+
 }
 
 #adv-box {
@@ -35,10 +49,7 @@
    background-color: rgb(200, 200, 200);;
 }
 
-#adv-display-name {
-    margin: 0;
-}
-
 .adv-row {
     display: flex;
 }
+

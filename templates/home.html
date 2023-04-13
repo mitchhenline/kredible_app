@@ -7,12 +7,14 @@
     <a id="logout" href="/logout">Log Out</a>
 </div>
 
-
+<div class = "page-header">
+    <h1>Advocate List</h1>
+</div>
 
 <div id = "adv-list-div">
     {% for advocate in advocate_list %}
     <div id="adv-box" class="adv-row">
-    <h2 id = "adv-display-name">{{ advocate.first_name }} {{ advocate.last_name }} of {{ advocate.company }}</h2>
+    <p>{{ advocate.first_name }} {{ advocate.last_name }} of {{ advocate.company }}</p>
     <p>Email: {{ advocate.email }}</p>
     <p>Industry: {{ advocate.industry }}</p>
     <p>Company Size: {{ advocate.company_size }}</p>
