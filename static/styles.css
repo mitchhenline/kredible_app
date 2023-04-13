@@ -1,5 +1,5 @@
 /* /////////////////// */
-/* NAV BAR & HEADERS   */
+/*      NAV BAR      */
 /* /////////////////// */
 
 #navigation {
@@ -17,8 +17,14 @@
     margin-left: 10%;
   }
 
+
+
+
+/* /////////////////// */
+/*     RIGHT SIDE      */
+/* /////////////////// */
+
 .page-header {
-    margin-left: 15%;
     position:fixed;
     top: 0%;
     width: 100%;
@@ -28,14 +34,14 @@
     border-color: black;
 }
 
-
-/* /////////////////// */
-/* VIEW ADVOCATES PAGE */
-/* /////////////////// */
+#right-side {
+    background-color: rgb(235, 235, 235);
+    margin-left: 15%;
+}
 
 #adv-list-div {
     background-color: rgb(235, 235, 235);
-    margin-left: 15%;
+    
     margin-top: 7%;
 }
 
