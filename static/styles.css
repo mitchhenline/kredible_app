@@ -3,12 +3,13 @@
 /* /////////////////// */
 
 #navigation {
-    border-bottom: solid;
+    border-right: solid;
     border-color: black;
     position: fixed;
+    left: 0px;
     top: 0px;
-    width: 100%;
-    background-color: azure;
+    height: 100%;
+    background-color: rgb(158, 158, 158);
 }
 
 
@@ -17,10 +18,8 @@
 /* /////////////////// */
 
 #adv-list-div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 100px;
+    margin-left: 350px;
+    display:inline;
 }
 
 #adv-box {
@@ -29,7 +28,6 @@
     border-radius: 1px;
     margin: 5px;
     background-color:rgb(225, 225, 225);
-    flex: 0 0 calc(18% - 10px); /* 20% for 5 items, minus 10px for margins */
     padding: 5px;
 }
 
@@ -38,6 +36,9 @@
 }
 
 #adv-display-name {
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 0;
+}
+
+.adv-row {
+    display: flex;
 }

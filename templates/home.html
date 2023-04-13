@@ -11,7 +11,7 @@
 
 <div id = "adv-list-div">
     {% for advocate in advocate_list %}
-    <div id="adv-box">
+    <div id="adv-box" class="adv-row">
     <h2 id = "adv-display-name">{{ advocate.first_name }} {{ advocate.last_name }} of {{ advocate.company }}</h2>
     <p>Email: {{ advocate.email }}</p>
     <p>Industry: {{ advocate.industry }}</p>
