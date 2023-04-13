@@ -3,15 +3,21 @@
 /* /////////////////// */
 
 #navigation {
-    border-right: solid;
-    border-color: black;
+    /* border-right: solid;
+    border-color: black; */
+    background-color: white;
     position: fixed;
     left: 0px;
     top: 0px;
     height: 100%;
-    background-color: rgb(158, 158, 158);
     width: 15%;
 }
+
+#navigation a {
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 10%;
+  }
 
 .page-header {
     margin-left: 15%;
@@ -30,23 +36,18 @@
 /* /////////////////// */
 
 #adv-list-div {
+    background-color: rgb(180, 180, 180);
     margin-left: 15%;
     margin-top: 8%;
-    
-
 }
 
 #adv-box {
-    border: solid;
-    border-color: black;
-    border-radius: 1px;
     margin: 5px;
-    background-color:rgb(225, 225, 225);
     padding: 5px;
 }
 
 #adv-box:hover {
-   background-color: rgb(200, 200, 200);;
+   background-color: rgb(255, 255, 255);;
 }
 
 .adv-row {
