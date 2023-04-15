@@ -20,17 +20,28 @@
 <div id="right-side">
 
     <div class = "page-header">
-        <h1>Advocate List</h1>
+        <h1 class = "center-header">Advocate List</h1>
+    </div>
+
+    <div id="list-header">
+        
+        <p>Name</p>
+        <p>Company</p>
+        <p>Email</p>
+        <p>Industry</p>
+        <p>Company Size</p>
+        
     </div>
 
     <div id = "adv-list-div">
         {% for advocate in advocate_list %}
         <div id="adv-box" class="adv-row">
             
-            <strong><p>{{ advocate.first_name }} {{ advocate.last_name }} of {{ advocate.company }}</p></strong>&nbsp;
-            <p>Email: {{ advocate.email }}</p>&nbsp;
-            <p>Industry: {{ advocate.industry }}</p>&nbsp;
-            <p>Company Size: {{ advocate.company_size }}</p>
+            <p id="adv-title">{{ advocate.first_name }} {{ advocate.last_name }}</p>
+            <p id="company-title">{{ advocate.company }}</p>
+            <p id="email-title">{{ advocate.email }}</p>
+            <p id="industry-title">{{ advocate.industry }}</p>
+            <p id="company-size-title">{{ advocate.company_size }}</p>
     
         </div>
         {% endfor %}

@@ -18,20 +18,20 @@
   }
 
 
-
-
 /* /////////////////// */
-/*     RIGHT SIDE      */
+/*   ADVOCATE LIST     */
 /* /////////////////// */
 
 .page-header {
     position:fixed;
     top: 0%;
+    height: 10%;
     width: 100%;
     background-color: rgb(235, 235, 235);
     border-bottom: solid;
     border-width: 1px;
     border-color: black;
+    z-index: 1;
 }
 
 #right-side {
@@ -39,10 +39,38 @@
     margin-left: 15%;
 }
 
+#list-header {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    position: fixed;
+    top: 10%;
+    width: 100%;
+    background-color: rgb(235, 235, 235);
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: black;
+    z-index: 1;
+}
+
 #adv-list-div {
     background-color: rgb(235, 235, 235);
-    
-    margin-top: 7%;
+    margin-top: 10%;
+}
+
+.adv-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.adv-row p {
+    margin: 0;
+  }
+
+.center-header {
+    margin-left: 20%;
 }
 
 #adv-box {
@@ -54,7 +82,28 @@
    background-color: rgb(255, 255, 255);;
 }
 
-.adv-row {
-    display: flex;
+
+
+/* /////////////////// */
+/*   List Info Display */
+/* /////////////////// */
+
+/* #adv-title {
+    
 }
 
+#company-title {
+    
+}
+
+#email-title {
+    
+}
+
+#industry-title {
+    
+}
+
+#company-size-title {
+    
+} */
