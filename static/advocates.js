@@ -6,7 +6,20 @@ document.addEventListener("DOMContentLoaded", function() {
         row.addEventListener('click', () => {
             const advocateId = row.dataset.advocateId;
             // Make an AJAX request to your Flask server to retrieve advocate info
-            // Once the info is retrieved, call a function to display it in the pop-up modal
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', `/advocates/${advocateId}`);
+            xhr.onload = () => {
+                if (xhr.status === 200) {
+                    const advocate = JSON.parse(xhr.responseText);
+                    displayAdvocateInfo(advocate);
+                } else {
+                    console.error('Error:', xhr.statusText);
+                }
+            };
+            xhr.onerror = () => {
+                console.error('Error:', xhr.statusText);
+            };
+            xhr.send();
         });
     });
 
@@ -41,3 +54,4 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 });
+

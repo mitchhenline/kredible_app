@@ -1,6 +1,6 @@
 """Kredible server."""
 
-from flask import Flask, render_template, request, session, redirect, flash
+from flask import Flask, render_template, request, session, redirect, flash, jsonify
 from jinja2 import StrictUndefined
 from model import connect_to_db, db
 from forms import LoginForm
@@ -89,7 +89,19 @@ def login():
     
     return render_template("login.html", form = form)
 
-@app.route('/logout',)
+@app.route('/advocates/<advocate_id>')
+def get_advocate_info(advocate_id):
+    advocate = crud.get_advocate_by_id(advocate_id)
+    advocate_dict = {
+        'name': advocate.name,
+        'email': advocate.email,
+        'company': advocate.company
+        # Add more advocate info here
+    }
+    return jsonify(advocate_dict)
+
+
+@app.route('/logout')
 def logout():
     del session['email']
     return redirect('/')
