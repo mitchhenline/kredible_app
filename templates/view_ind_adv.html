@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Kredible{% endblock %}
+{% block body %}
+
+<div id="navigation">
+
+    <h1>Kredible</h1>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/advocates">Advocates</a>
+    <a href="/calendar">Calendar</a>
+    <a href="/notifications">Notifications</a>
+    <a href="/settings">Settings</a>
+    <a id="logout" href="/logout">Log Out</a>
+
+</div>
+
+
+
+
+<div id="right-side">
+
+   
+            
+            <p id="adv-title">{{ advocate.first_name }} {{ advocate.last_name }}</p>
+            <p id="company-title">{{ advocate.company }}</p>
+            <p id="email-title">{{ advocate.email }}</p>
+            <p id="industry-title">{{ advocate.industry }}</p>
+            <p id="company-size-title">{{ advocate.company_size }}</p>
+
+    
+
+</div>
+
+{% endblock %}

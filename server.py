@@ -1,8 +1,8 @@
 """Kredible server."""
 
-from flask import Flask, render_template, request, session, redirect, flash, jsonify
+from flask import Flask, render_template, request, session, redirect, flash, abort, jsonify
 from jinja2 import StrictUndefined
-from model import connect_to_db, db
+from model import connect_to_db, db, UserAdv, User
 from forms import LoginForm
 import crud
 
@@ -25,6 +25,7 @@ def advocates_page():
     if 'email' not in session:
         return redirect('/login')
     
+    
     relationships = crud.get_relationships_by_email(session['email'])
     advocate_list = []
 
@@ -33,6 +34,19 @@ def advocates_page():
 
 
     return render_template("advocates.html", advocate_list = advocate_list)
+
+@app.route('/advocates/<adv_id>')
+def get_advocate_info(adv_id):
+
+    if 'email' not in session:
+        return redirect('/login')
+
+    advocate = crud.get_advocate_by_id(adv_id)
+
+    #need to modify this file so the user is connected to adv to be able to view page
+
+    return render_template("view_ind_adv.html", advocate=advocate)
+
 
 @app.route('/calendar')
 def calendar_page():
@@ -88,17 +102,7 @@ def login():
         return redirect("/")
     
     return render_template("login.html", form = form)
-
-@app.route('/advocates/<advocate_id>')
-def get_advocate_info(advocate_id):
-    advocate = crud.get_advocate_by_id(advocate_id)
-    advocate_dict = {
-        'name': advocate.name,
-        'email': advocate.email,
-        'company': advocate.company
-        # Add more advocate info here
-    }
-    return jsonify(advocate_dict)
+    
 
 
 @app.route('/logout')

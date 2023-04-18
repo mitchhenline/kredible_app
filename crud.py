@@ -7,5 +7,5 @@ def get_user_by_email(email) -> User:
 def get_relationships_by_email(id):
     return UserAdv.query.filter(UserAdv.id == id)
 
-def get_advocate_by_id(id):
-    return Advocate.query.filter(Advocate.adv_id == id).first()
+def get_advocate_by_id(adv_id):
+    return Advocate.query.filter(Advocate.adv_id == adv_id).first()
