@@ -14,7 +14,7 @@ app.jinja_env.undefined = StrictUndefined
 @app.route('/')
 def homepage():
     """View homepage."""
-    if 'email' not in session:
+    if 'id' not in session:
         return redirect('/login')
     else:
         return redirect('/advocates')
@@ -22,11 +22,11 @@ def homepage():
 @app.route('/advocates')
 def advocates_page():
 
-    if 'email' not in session:
+    if 'id' not in session:
         return redirect('/login')
     
     
-    relationships = crud.get_relationships_by_email(session['email'])
+    relationships = crud.get_relationships_by_id(session['id'])
     advocate_list = []
 
     for relationship in relationships:
@@ -38,12 +38,18 @@ def advocates_page():
 @app.route('/advocates/<adv_id>')
 def get_advocate_info(adv_id):
 
-    if 'email' not in session:
+    if 'id' not in session:
         return redirect('/login')
 
     advocate = crud.get_advocate_by_id(adv_id)
 
+    # user = crud.get_user_by_id(session['id'])
+    # user_id = user.id
+
     #need to modify this file so the user is connected to adv to be able to view page
+    # cause this below isnt working
+    # if not UserAdv.query.filter_by(adv_id=adv_id, email = session['email']).first():
+    #     abort(403)
 
     return render_template("view_ind_adv.html", advocate=advocate)
 
@@ -98,7 +104,7 @@ def login():
             flash("Invalid email or password")
             return redirect("/login")
         
-        session['email'] = user.id
+        session['id'] = user.id
         return redirect("/")
     
     return render_template("login.html", form = form)
@@ -107,7 +113,7 @@ def login():
 
 @app.route('/logout')
 def logout():
-    del session['email']
+    del session['id']
     return redirect('/')
 
 
