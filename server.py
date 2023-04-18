@@ -2,10 +2,9 @@
 
 from flask import Flask, render_template, request, session, redirect, flash, abort, jsonify
 from jinja2 import StrictUndefined
-from model import connect_to_db, db, UserAdv, User
+from model import connect_to_db, UserAdv
 from forms import LoginForm
 import crud
-
 
 app = Flask(__name__)
 app.secret_key = "gwaggies"
@@ -25,13 +24,11 @@ def advocates_page():
     if 'id' not in session:
         return redirect('/login')
     
-    
     relationships = crud.get_relationships_by_id(session['id'])
     advocate_list = []
 
     for relationship in relationships:
         advocate_list.append(relationship.advocate)
-
 
     return render_template("advocates.html", advocate_list = advocate_list)
 
@@ -43,23 +40,16 @@ def get_advocate_info(adv_id):
 
     advocate = crud.get_advocate_by_id(adv_id)
 
-    # user = crud.get_user_by_id(session['id'])
-    # user_id = user.id
-
-    #need to modify this file so the user is connected to adv to be able to view page
-    # cause this below isnt working
-    # if not UserAdv.query.filter_by(adv_id=adv_id, email = session['email']).first():
-    #     abort(403)
+    if not UserAdv.query.filter_by(adv_id=adv_id, id = session['id']).first():
+        abort(403)
 
     return render_template("view_ind_adv.html", advocate=advocate)
-
 
 @app.route('/calendar')
 def calendar_page():
 
     if 'email' not in session:
         return redirect('/login')
-
 
     return render_template("calendar.html")
 
@@ -69,7 +59,6 @@ def dashboard():
     if 'email' not in session:
         return redirect('/login')
 
-
     return render_template("dashboard.html")
 
 @app.route('/notifications')
@@ -77,7 +66,6 @@ def notifications():
 
     if 'email' not in session:
         return redirect('/login')
-
 
     return render_template("notifications.html")
 
@@ -98,7 +86,6 @@ def login():
         email = form.email.data
         password = form.password.data
 
-
         user = crud.get_user_by_email(email)
         if not user or user.password != password:
             flash("Invalid email or password")
@@ -109,13 +96,10 @@ def login():
     
     return render_template("login.html", form = form)
     
-
-
 @app.route('/logout')
 def logout():
     del session['id']
     return redirect('/')
-
 
 if __name__ == "__main__":
     connect_to_db(app)

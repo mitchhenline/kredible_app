@@ -35,7 +35,7 @@
 
     <div id = "adv-list-div">
         {% for advocate in advocate_list %}
-        <div id="adv-box" class="adv-row">
+        <a href="/advocates/{{ advocate.adv_id }}" id="adv-box" class="adv-row">
             
             <p id="adv-title">{{ advocate.first_name }} {{ advocate.last_name }}</p>
             <p id="company-title">{{ advocate.company }}</p>
@@ -43,7 +43,7 @@
             <p id="industry-title">{{ advocate.industry }}</p>
             <p id="company-size-title">{{ advocate.company_size }}</p>
     
-        </div>
+        </a>
         {% endfor %}
     </div>
 
