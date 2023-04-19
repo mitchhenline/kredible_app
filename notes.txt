@@ -1,0 +1,10 @@
+-steps-
+1. Hit request in view_ind_adv button and have a popup come up 
+2. "Create a request" Pop up shows name, a calendar, time selector, close and submit buttons
+3. Hitting it sends an email to advocate with info and they can select time and hit submit
+
+
+
+
+
+https://www.figma.com/proto/64roKJHjRscKbivaunk5xI/Wireframing-in-Figma?node-id=229-977&scaling=contain&page-id=0%3A1&starting-point-node-id=229%3A977
