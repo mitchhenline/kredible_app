@@ -1,5 +1,11 @@
 {% extends "base.html" %}
+
+{% block head %}
+<script src="{{ url_for('static', filename='js/advocates.js') }}"></script> 
+{% endblock %}
+
 {% block title %}Kredible{% endblock %}
+
 {% block body %}
 
 <div id="navigation">
