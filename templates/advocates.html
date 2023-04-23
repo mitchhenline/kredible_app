@@ -17,6 +17,7 @@
     <a href="/notifications">Notifications</a>
     <a href="/settings">Settings</a>
     <a id="logout" href="/logout">Log Out</a>
+    <button id="showButton">Test JavaScript</button>
 
 </div>
 
@@ -48,16 +49,29 @@
             <p id="email-title">{{ advocate.email }}</p>
             <p id="industry-title">{{ advocate.industry }}</p>
             <p id="company-size-title">{{ advocate.company_size }}</p>
-    
+            
+
         </a>
         {% endfor %}
     </div>
 
-    <div id="advocate-modal" style="display: none;">
-        <!-- Pop-up content goes here -->
+    <div id="myDiv" style="display: none;">
+        <button id="closeButton" style="float: right;">X</button>
+        <h1>Go Aggies!</h1>
     </div>
     
 
 </div>
 
+<script>
+    document.getElementById("showButton").addEventListener("click", function() {
+    showDiv();
+  });
+
+  document.getElementById("closeButton").addEventListener("click", function() {
+  var div = document.getElementById("myDiv");
+  div.style.display = "none";
+});
+
+</script>
 {% endblock %}
