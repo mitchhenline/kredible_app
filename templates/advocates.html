@@ -17,7 +17,6 @@
     <a href="/notifications">Notifications</a>
     <a href="/settings">Settings</a>
     <a id="logout" href="/logout">Log Out</a>
-    <button id="showButton">Test JavaScript</button>
 
 </div>
 
@@ -42,7 +41,7 @@
 
     <div id = "adv-list-div">
         {% for advocate in advocate_list %}
-        <a href="/advocates/{{ advocate.adv_id }}" id="adv-box" class="adv-row">
+        <a id="adv-box" class="adv-row">
             
             <p id="adv-title">{{ advocate.first_name }} {{ advocate.last_name }}</p>
             <p id="company-title">{{ advocate.company }}</p>
@@ -50,7 +49,6 @@
             <p id="industry-title">{{ advocate.industry }}</p>
             <p id="company-size-title">{{ advocate.company_size }}</p>
             
-
         </a>
         {% endfor %}
     </div>
@@ -64,14 +62,27 @@
 </div>
 
 <script>
-    document.getElementById("showButton").addEventListener("click", function() {
-    showDiv();
-  });
 
-  document.getElementById("closeButton").addEventListener("click", function() {
-  var div = document.getElementById("myDiv");
-  div.style.display = "none";
-});
+    document.querySelectorAll('.adv-row').forEach(function(element) {
+        element.addEventListener('click', function() {
+            let advocate = {
+                first_name: element.querySelector('#adv-title').textContent,
+                last_name: "",
+                company: element.querySelector('#company-title').textContent,
+                email: element.querySelector('#email-title').textContent,
+                industry: element.querySelector('#industry-title').textContent,
+                company_size: element.querySelector('#company-size-title').textContent
+            };
+        showAdvInfo(advocate);
+        });
+    });
+
+    document.getElementById("closeButton").addEventListener("click", function() {
+        var div = document.getElementById("myDiv");
+        div.style.display = "none";
+    });
+
 
 </script>
+
 {% endblock %}
