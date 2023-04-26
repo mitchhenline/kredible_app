@@ -7,7 +7,9 @@ function showAdvInfo(advocate) {
       <p>Email: ${advocate.email}</p>
       <p>Industry: ${advocate.industry}</p>
       <p>Company Size: ${advocate.company_size}</p>
-    `;
+      <button id="scheduleButton" style="float">Schedule</button>
+    `
+    ;
     div.style.display = "block";
   
     document.getElementById("closeButton").addEventListener("click", function() {

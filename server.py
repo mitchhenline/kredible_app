@@ -48,7 +48,7 @@ def get_advocate_info(adv_id):
 @app.route('/calendar')
 def calendar_page():
 
-    if 'email' not in session:
+    if 'id' not in session:
         return redirect('/login')
 
     return render_template("calendar.html")
@@ -56,7 +56,7 @@ def calendar_page():
 @app.route('/dashboard')
 def dashboard():
 
-    if 'email' not in session:
+    if 'id' not in session:
         return redirect('/login')
 
     return render_template("dashboard.html")
@@ -64,7 +64,7 @@ def dashboard():
 @app.route('/notifications')
 def notifications():
 
-    if 'email' not in session:
+    if 'id' not in session:
         return redirect('/login')
 
     return render_template("notifications.html")
@@ -72,7 +72,7 @@ def notifications():
 @app.route('/settings')
 def settings():
 
-    if 'email' not in session:
+    if 'id' not in session:
         return redirect('/login')
 
     return render_template("settings.html")
