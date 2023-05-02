@@ -21,6 +21,10 @@
     top: 0px;
     height: 100%;
     width: 15%;
+    border-right: solid;
+    border-right-width: 1px;
+    border-right-color:black;
+    padding-right: 4px;
 }
 
 #navigation a {
