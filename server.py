@@ -3,7 +3,7 @@
 from flask import Flask, render_template, request, session, redirect, flash, abort, jsonify
 from jinja2 import StrictUndefined
 from model import connect_to_db, UserAdv
-from forms import LoginForm
+from forms import LoginForm, RequestForm
 import crud
 
 app = Flask(__name__)
