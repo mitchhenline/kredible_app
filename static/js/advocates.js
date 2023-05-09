@@ -8,8 +8,6 @@ function showAdvInfo(advocate) {
       <p>Industry: ${advocate.industry}</p>
       <p>Company Size: ${advocate.company_size}</p>
 
-  
-
 
       <button id="scheduleButton" style="float">Schedule</button>
     `

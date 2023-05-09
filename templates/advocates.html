@@ -54,11 +54,19 @@
     </div>
 
     <div id="myDiv" style="display: none;">
+        
         <button id="closeButton" style="float: right;">X</button>
     </div>
     
 
 </div>
+
+<!-- figure where this form goes -->
+<!-- <form method="POST">
+    <div>{{ form.prospect_email.label }}: {{ form.prospect_email }}</div>
+    {{ form.csrf_token }}
+</form> -->
+
 
 <script>
 
@@ -80,6 +88,8 @@
         var div = document.getElementById("myDiv");
         div.style.display = "none";
     });
+
+
 
 
 </script>

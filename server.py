@@ -3,7 +3,7 @@
 from flask import Flask, render_template, request, session, redirect, flash, abort, jsonify
 from jinja2 import StrictUndefined
 from model import connect_to_db, UserAdv
-from forms import LoginForm, RequestForm
+from forms import LoginForm, RequestMeetingForm
 import crud
 
 app = Flask(__name__)
@@ -26,11 +26,12 @@ def advocates_page():
     
     relationships = crud.get_relationships_by_id(session['id'])
     advocate_list = []
+    form = RequestMeetingForm(request.form)
 
     for relationship in relationships:
         advocate_list.append(relationship.advocate)
 
-    return render_template("advocates.html", advocate_list = advocate_list)
+    return render_template("advocates.html", advocate_list = advocate_list, form = form)
 
 @app.route('/advocates/<adv_id>')
 def get_advocate_info(adv_id):
