@@ -11,11 +11,8 @@ function showAdvInfo(advocate) {
     <form method="POST" action="/advocates">
       <label for="prospect_email">Prospect Email</label>
       <input type="text" id="prospect_email" name="prospect_email" required>
-
       <button type="submit">Submit</button>
     </form>
-
-    <button id="scheduleButton" style="float">Schedule</button>
   `
   ;
   div.style.display = "block";
