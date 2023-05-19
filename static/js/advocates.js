@@ -9,18 +9,19 @@ function showAdvInfo(advocate) {
     <p>Company Size: ${advocate.company_size}</p>
 
     <form method="POST" action="/advocates">
+      <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
       <label for="prospect_email">Prospect Email</label>
       <input type="text" id="prospect_email" name="prospect_email" required>
       <button type="submit">Submit</button>
     </form>
-  `
-  ;
+  `;
   div.style.display = "block";
 
   document.getElementById("closeButton").addEventListener("click", function() {
     div.style.display = "none";
   });
 }
+
 
 
 // In this modified code, 

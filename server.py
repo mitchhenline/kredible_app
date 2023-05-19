@@ -21,6 +21,7 @@ def homepage():
 @app.route('/advocates', methods=['GET', 'POST'])
 def advocates_page():
 
+
     if 'id' not in session:
         return redirect('/login')
     
@@ -29,12 +30,9 @@ def advocates_page():
     form = RequestMeetingForm(request.form)
 
 
-    #this is the section im working on, not sure if it is working to accept the email in the form
-    #not printing either message in this function below
+    #still working to figure out why this doesn't work to print
     if form.validate_on_submit():  
-        print("test")
         prospect_email = form.prospect_email.data
-        print(prospect_email)
 
     for relationship in relationships:
         advocate_list.append(relationship.advocate)
