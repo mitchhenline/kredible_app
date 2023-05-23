@@ -4,6 +4,7 @@ from flask import Flask, render_template, request, session, redirect, flash, abo
 from jinja2 import StrictUndefined
 from model import connect_to_db, UserAdv
 from forms import LoginForm, RequestMeetingForm
+
 import crud
 
 app = Flask(__name__)
@@ -30,9 +31,11 @@ def advocates_page():
     form = RequestMeetingForm(request.form)
 
 
-    #still working to figure out why this doesn't work to print
     if form.validate_on_submit():  
         prospect_email = form.prospect_email.data
+        print("Prospect Email:", prospect_email)
+    else:
+        print("Form not validated")
 
     for relationship in relationships:
         advocate_list.append(relationship.advocate)
