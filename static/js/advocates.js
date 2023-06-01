@@ -7,6 +7,7 @@ function showAdvInfo(advocate) {
     <p>Email: ${advocate.email}</p>
     <p>Industry: ${advocate.industry}</p>
     <p>Company Size: ${advocate.company_size}</p>
+    <a href='/advocates/${advocate.adv_id}'>View Advocate Info</a>
 
     <form method="POST" action="/advocates">
       

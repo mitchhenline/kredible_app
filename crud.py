@@ -9,3 +9,4 @@ def get_relationships_by_id(id):
 
 def get_advocate_by_id(adv_id):
     return Advocate.query.filter(Advocate.adv_id == adv_id).first()
+
