@@ -10,7 +10,6 @@ function showAdvInfo(advocate) {
     <a href='/advocates/${advocate.adv_id}'>View Advocate Info</a>
 
     <form method="POST" action="/advocates">
-      
       <label for="prospect_email">Prospect Email</label>
       <input type="text" id="prospect_email" name="prospect_email" required>
       <button type="submit">Submit</button>
@@ -19,7 +18,6 @@ function showAdvInfo(advocate) {
   `;
 
 
-  // #find a doc and read it
   div.style.display = "block";
 
   document.getElementById("closeButton").addEventListener("click", function() {

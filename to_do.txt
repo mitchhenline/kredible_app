@@ -1,0 +1,4 @@
+The javascript file has a link, but clicking it doesn't bring pull the id, so i get a 404 error
+
+when i get that figured out, next step is creating the form
+eventually want to have the form in the javascript do the same thing
