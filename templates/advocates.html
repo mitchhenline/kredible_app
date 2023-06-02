@@ -48,6 +48,7 @@
             <p id="email-title">{{ advocate.email }}</p>
             <p id="industry-title">{{ advocate.industry }}</p>
             <p id="company-size-title">{{ advocate.company_size }}</p>
+            <p id="adv-id-title">{{ advocate.adv_id }}</p>
             
         </a>
         {% endfor %}
@@ -75,7 +76,8 @@
                 company: element.querySelector('#company-title').textContent,
                 email: element.querySelector('#email-title').textContent,
                 industry: element.querySelector('#industry-title').textContent,
-                company_size: element.querySelector('#company-size-title').textContent
+                company_size: element.querySelector('#company-size-title').textContent,
+                adv_id: element.querySelector('#adv-id-title').textContent
             };
         showAdvInfo(advocate);
         });
