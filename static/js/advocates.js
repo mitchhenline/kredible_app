@@ -1,5 +1,5 @@
 function showAdvInfo(advocate) {
-  let div = document.getElementById("myDiv");
+  let div = document.getElementById("prospectBox");
   div.innerHTML = `
     <button id="closeButton" style="float: right;">X</button>
     <h1>${advocate.first_name} ${advocate.last_name}</h1>
@@ -9,12 +9,7 @@ function showAdvInfo(advocate) {
     <p>Company Size: ${advocate.company_size}</p>
     <a href='/advocates/${advocate.adv_id}'>View Advocate Info</a>
 
-    <form method="POST" action="/advocates">
-      <label for="prospect_email">Prospect Email</label>
-      <input type="text" id="prospect_email" name="prospect_email" required>
-      <button type="submit">Submit</button>
-      <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
-    </form>
+    <p>prospect email form goes here</p>
   `;
 
 

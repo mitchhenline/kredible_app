@@ -54,7 +54,7 @@
         {% endfor %}
     </div>
 
-    <div id="myDiv" style="display: none;">
+    <div id="prospectBox" style="display: none;">
         
         <button id="closeButton" style="float: right;">X</button>
     </div>
@@ -84,7 +84,7 @@
     });
 
     document.getElementById("closeButton").addEventListener("click", function() {
-        var div = document.getElementById("myDiv");
+        var div = document.getElementById("prospectBox");
         div.style.display = "none";
     });
 
