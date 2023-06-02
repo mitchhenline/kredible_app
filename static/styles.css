@@ -116,6 +116,10 @@
 /*   List Info Display */
 /* /////////////////// */
 
+#adv-id-title {
+    display: none;
+}
+
 /* #adv-title {
     
 }
