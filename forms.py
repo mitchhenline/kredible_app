@@ -7,3 +7,4 @@ class LoginForm(FlaskForm):
 
 class RequestMeetingForm(FlaskForm):
     prospect_email = StringField('Prospect Email ', [validators.InputRequired()])
+    notes = StringField('What the email will say:', [validators.InputRequired()])

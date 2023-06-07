@@ -57,9 +57,11 @@ adv25 = Advocate(email="testadv25@test.com", first_name="Olivia", last_name="Joh
 adv26 = Advocate(email="testadv26@test.com", first_name="Charles", last_name="Nguyen", company="Nguyen Industries", industry="Manufacturing", company_size="Medium", product="Manufacturing Execution System")
 adv27 = Advocate(email="testadv27@test.com", first_name="Sophia", last_name="Brown", company="Brown Co.", industry="Consulting", company_size="Large", product="Accounting Software")
 adv28 = Advocate(email="testadv28@test.com", first_name="Daniel", last_name="Lee", company="Lee Corp.", industry="Technology", company_size="Small", product="Cybersecurity")
+adv29 = Advocate(email="testadv29@test.com", first_name="Catherine", last_name="E", company="Wowza.", industry="Technology", company_size="Small", product="Cybersecurity")
 
 
-db.session.add_all([adv1, adv2, adv3, adv4, adv5, adv6, adv7, adv8, adv9, adv10, adv11, adv12, adv13, adv14, adv15, adv16, adv17, adv18, adv19, adv20, adv21, adv22, adv23, adv24, adv25, adv26, adv27, adv28])
+
+db.session.add_all([adv1, adv2, adv3, adv4, adv5, adv6, adv7, adv8, adv9, adv10, adv11, adv12, adv13, adv14, adv15, adv16, adv17, adv18, adv19, adv20, adv21, adv22, adv23, adv24, adv25, adv26, adv27, adv28, adv29])
 
 
 #UserAdv
@@ -117,7 +119,9 @@ useradv48 = UserAdv(id=2, adv_id=23)
 useradv49 = UserAdv(id=2, adv_id=24)
 useradv50 = UserAdv(id=2, adv_id=25)
 
-useradvs = [useradv1, useradv2, useradv3, useradv4, useradv5, useradv6, useradv7, useradv8, useradv9, useradv10,            useradv11, useradv12, useradv13, useradv14, useradv15, useradv16, useradv17, useradv18, useradv19, useradv20,            useradv21, useradv22, useradv23, useradv24, useradv25, useradv26, useradv27, useradv28, useradv29, useradv30,            useradv31, useradv32, useradv33, useradv34, useradv35, useradv36, useradv37, useradv38, useradv39, useradv40,            useradv41, useradv42, useradv43, useradv44, useradv45, useradv46, useradv47, useradv48, useradv49, useradv50]
+useradv51 = UserAdv(id=1, adv_id=29)
+
+useradvs = [useradv1, useradv2, useradv3, useradv4, useradv5, useradv6, useradv7, useradv8, useradv9, useradv10,            useradv11, useradv12, useradv13, useradv14, useradv15, useradv16, useradv17, useradv18, useradv19, useradv20,            useradv21, useradv22, useradv23, useradv24, useradv25, useradv26, useradv27, useradv28, useradv29, useradv30,            useradv31, useradv32, useradv33, useradv34, useradv35, useradv36, useradv37, useradv38, useradv39, useradv40,            useradv41, useradv42, useradv43, useradv44, useradv45, useradv46, useradv47, useradv48, useradv49, useradv50, useradv51]
 
 
 db.session.add_all(useradvs)

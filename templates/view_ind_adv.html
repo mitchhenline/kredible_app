@@ -14,17 +14,17 @@
 
 </div>
 
-
-
-
 <div id="right-side">
             <p id="adv-title">{{ advocate.first_name }} {{ advocate.last_name }}</p>
             <p id="company-title">{{ advocate.company }}</p>
             <p id="email-title">{{ advocate.email }}</p>
             <p id="industry-title">{{ advocate.industry }}</p>
             <p id="company-size-title">{{ advocate.company_size }}</p>
-            <p> *email box goes here* </p>
-            <button>Schedule</button>
+            <br>
+            <form method="POST" action="/rep/{{ advocate.adv_id }}">
+                <p> {{ form.prospect_email }}:<br> {{ form.prospect_email }}</p>
+                <p> {{ form.notes }}:<br> {{ form.notes }} </p>
+            </form>
 </div>
 
 {% endblock %}

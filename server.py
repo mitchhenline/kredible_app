@@ -49,11 +49,12 @@ def get_advocate_info(adv_id):
         return redirect('/login')
 
     advocate = crud.get_advocate_by_id(adv_id)
+    form = RequestMeetingForm
 
     if not UserAdv.query.filter_by(adv_id=adv_id, id = session['id']).first():
         abort(403)
 
-    return render_template("view_ind_adv.html", advocate=advocate)
+    return render_template("view_ind_adv.html", advocate=advocate, form=form)
 
 @app.route('/calendar')
 def calendar_page():
