@@ -49,7 +49,7 @@ def get_advocate_info(adv_id):
         return redirect('/login')
 
     advocate = crud.get_advocate_by_id(adv_id)
-    form = RequestMeetingForm
+    form = RequestMeetingForm(request.form)
 
     if not UserAdv.query.filter_by(adv_id=adv_id, id = session['id']).first():
         abort(403)
