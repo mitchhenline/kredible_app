@@ -49,10 +49,18 @@ def get_advocate_info(adv_id):
         return redirect('/login')
 
     advocate = crud.get_advocate_by_id(adv_id)
-    form = RequestMeetingForm(request.form)
+    
 
     if not UserAdv.query.filter_by(adv_id=adv_id, id = session['id']).first():
         abort(403)
+
+    form = RequestMeetingForm(request.form)
+
+    if form.validate_on_submit():
+        prospect_email = form.prospect_email.data
+        notes = form.notes.data
+
+        return redirect('/advocates')
 
     return render_template("view_ind_adv.html", advocate=advocate, form=form)
 

@@ -22,7 +22,7 @@
             <p id="company-size-title">{{ advocate.company_size }}</p>
             <br>
     
-            <form method="POST" action="/rep/{{ advocate.adv_id }}">
+            <form method="POST" action="/advocates/{{ advocate.adv_id }}">
                 <p> {{ form.prospect_email.label }}:<br> {{ form.prospect_email }}</p>
                 <p> {{ form.notes.label }}:<br> {{ form.notes }} </p>
                 <button type="submit">Request Meeting</button>

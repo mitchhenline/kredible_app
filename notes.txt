@@ -1,6 +1,6 @@
 -steps-
 
-Next: get the form input to show up in the view ind adv page
+Next: get the form input to show up in the view ind adv page  !!I added request.form to server file and it appeared.!!
 Then: get the data to submit to the db
 
 
