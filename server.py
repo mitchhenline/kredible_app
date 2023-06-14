@@ -38,11 +38,12 @@ def advocates_page():
     #     print(prospect_email)
     # else:
     #     print("Form not validated")
+    # add form = form to line 46 if is needed
 
     for relationship in relationships:
         advocate_list.append(relationship.advocate)
 
-    return render_template("advocates.html", advocate_list = advocate_list, form = form)
+    return render_template("advocates.html", advocate_list = advocate_list)
 
 @app.route('/advocates/<adv_id>', methods =['GET','POST'])
 def get_advocate_info(adv_id):
