@@ -28,21 +28,23 @@ def advocates_page():
     
     relationships = crud.get_relationships_by_id(session['id'])
     advocate_list = []
-    form = RequestMeetingForm(request.form)
 
 
-    if form.validate_on_submit():  
-        prospect_email = form.prospect_email.data
-        print("Prospect Email:", prospect_email)
-    else:
-        print("Form not validated")
+    #NOT SURE IF WE NEED THIS
+    # form = RequestMeetingForm(request.form)
+
+    # if form.validate_on_submit():  
+    #     prospect_email = form.prospect_email.data
+    #     print(prospect_email)
+    # else:
+    #     print("Form not validated")
 
     for relationship in relationships:
         advocate_list.append(relationship.advocate)
 
     return render_template("advocates.html", advocate_list = advocate_list, form = form)
 
-@app.route('/advocates/<adv_id>')
+@app.route('/advocates/<adv_id>', methods =['GET','POST'])
 def get_advocate_info(adv_id):
 
     if 'id' not in session:
@@ -59,8 +61,12 @@ def get_advocate_info(adv_id):
     if form.validate_on_submit():
         prospect_email = form.prospect_email.data
         notes = form.notes.data
+        print(notes)
 
         return redirect('/advocates')
+    
+    else:
+        print('not validated')
 
     return render_template("view_ind_adv.html", advocate=advocate, form=form)
 

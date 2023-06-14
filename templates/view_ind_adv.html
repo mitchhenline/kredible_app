@@ -25,6 +25,7 @@
             <form method="POST" action="/advocates/{{ advocate.adv_id }}">
                 <p> {{ form.prospect_email.label }}:<br> {{ form.prospect_email }}</p>
                 <p> {{ form.notes.label }}:<br> {{ form.notes }} </p>
+                {{ form.csrf_token }}
                 <button type="submit">Request Meeting</button>
             </form>
 </div>
