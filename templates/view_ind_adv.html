@@ -14,6 +14,10 @@
 
 </div>
 
+{% for message in get_flashed_messages() %}
+    <h3 class="alert">{{ message }}</h3>
+{% endfor %}
+
 <div id="right-side">
             <p id="adv-title">{{ advocate.first_name }} {{ advocate.last_name }}</p>
             <p id="company-title">{{ advocate.company }}</p>

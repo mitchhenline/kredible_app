@@ -1,6 +1,7 @@
 """Kredible server."""
 
 from flask import Flask, render_template, request, session, redirect, flash, abort
+from flask_wtf import FlaskForm
 from jinja2 import StrictUndefined
 from model import connect_to_db, UserAdv
 from forms import LoginForm, RequestMeetingForm
@@ -30,7 +31,7 @@ def advocates_page():
     advocate_list = []
 
 
-    #NOT SURE IF WE NEED THIS
+    #NOT SURE IF WE NEED THIS, check later when add the js form
     # form = RequestMeetingForm(request.form)
 
     # if form.validate_on_submit():  
@@ -51,20 +52,18 @@ def get_advocate_info(adv_id):
     if 'id' not in session:
         return redirect('/login')
 
-    advocate = crud.get_advocate_by_id(adv_id)
-    
-
     if not UserAdv.query.filter_by(adv_id=adv_id, id = session['id']).first():
         abort(403)
 
+    advocate = crud.get_advocate_by_id(adv_id)
     form = RequestMeetingForm(request.form)
 
     if form.validate_on_submit():
         prospect_email = form.prospect_email.data
         notes = form.notes.data
         print(notes)
+        flash("Request sent")
 
-        return redirect('/advocates')
     
     else:
         print('not validated')
