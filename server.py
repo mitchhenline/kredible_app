@@ -62,7 +62,7 @@ def get_advocate_info(adv_id):
         prospect_email = form.prospect_email.data
         notes = form.notes.data
         print(notes)
-        flash(f"Your message {notes} was sent to {prospect_email}")
+        # flash(f"Your message {notes} was sent to {prospect_email}")
 
     
     else:

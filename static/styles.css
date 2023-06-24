@@ -9,6 +9,17 @@
     padding: 20px;
   }
 
+  #meetingConfirmationBox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid black;
+    padding: 20px;
+  }
+
 
 .alert {
     z-index: 1;

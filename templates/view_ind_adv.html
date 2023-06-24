@@ -26,13 +26,48 @@
             <p id="company-size-title">{{ advocate.company_size }}</p>
             <br>
     
-            <form method="POST" action="/advocates/{{ advocate.adv_id }}">
+            <form id="meetingForm" method="POST" action="/advocates/{{ advocate.adv_id }}">
                 <p> {{ form.prospect_email.label }}:<br> {{ form.prospect_email }}</p>
                 <p> {{ form.notes.label }}:<br> {{ form.notes }} </p>
                 {{ form.csrf_token }}
-                <button type="submit">Request Meeting</button>
+                <button id="meeting_submit_button" type="submit">Request Meeting</button>
             </form>
+        
+            <div id="meetingConfirmationBox" style="display: none;">
+                <h1>MEETING CONFIRMED</h1>
+                <h2>Your message {notes} was sent to {prospect_email}</h2>
+                <button id="closeButton" style="float: right;">X</button>
+            </div>
 </div>
+
+<script>
+
+// this div will need to changed to display actual meeting information submitted in form
+//I think it is more set up to do that now
+document.getElementById('meetingForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Display the confirmation box
+    let confirmationBox = document.getElementById('meetingConfirmationBox');
+    confirmationBox.style.display = 'block';
+
+    // Close the confirmation box when the X button is clicked
+    document.getElementById('closeButton').addEventListener('click', function() {
+        confirmationBox.style.display = 'none';
+    });
+
+    // You can also submit the form asynchronously using AJAX if needed
+    // Example using Fetch API:
+    // fetch(event.target.action, {
+    //     method: 'POST',
+    //     body: new FormData(event.target)
+    // }).then(response => {
+    //     // Handle the response if needed
+    // }).catch(error => {
+    //     // Handle any error that occurred during form submission
+    // });
+});
+</script>
 
 {% endblock %}
 
