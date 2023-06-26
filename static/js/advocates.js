@@ -9,7 +9,10 @@ function showAdvInfo(advocate) {
     <p>Company Size: ${advocate.company_size}</p>
     <a href='/advocates/${advocate.adv_id}'>View Advocate Info</a>
 
-    <p>prospect email form goes here</p>
+    <p><b>prospect email form goes here</b></p>
+    <p><b>ENTER MESSAGE</b></p>
+    <p><b>ENTER EMAIL</b></p>
+    <p><b>SUBMIT BUTTON</b></p>
   `;
 
 

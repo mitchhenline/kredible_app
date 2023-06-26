@@ -61,7 +61,7 @@ def get_advocate_info(adv_id):
     if form.validate_on_submit():
         prospect_email = form.prospect_email.data
         notes = form.notes.data
-        print(notes)
+        print(notes + prospect_email)
         # flash(f"Your message {notes} was sent to {prospect_email}")
 
     
